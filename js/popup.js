@@ -27,7 +27,7 @@ function messager({
         from,
         subject: JSON.stringify(subject)
       },
-      function(resp = "") {
+      function(resp = "{}") {
         afterSend(JSON.parse(resp))
       }
     );
@@ -46,4 +46,5 @@ function getWebStore() {
 
 function initPopupShow(store) {
   console.log('initPopupShow', store)
+  $('#output').html(JSON.stringify(store))
 }

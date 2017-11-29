@@ -1,1 +1,11 @@
 /* popup styles */
+
+body {
+    width: 600px;
+    height: 500px;
+}
+.container-popup {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}

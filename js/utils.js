@@ -3,25 +3,30 @@
  */
 
 // ======================= // Utils
-var STORE = 'crx-store-key';
-var STORE_DEFAULT = {
+const STORE = 'crx-store-key';
+const STORE_DEFAULT = {
     layout: {
         checked: false
     },
     translate: {
         checked: true
     },
-}
+};
 
 export function responseWrapper(response) {
-    return function(msg) {
+    return function (msg) {
         return response(JSON.stringify(msg))
     }
 }
 
 export function getStore(storeName = STORE) {
     try {
-        return JSON.parse(localStorage.getItem(storeName)) || STORE_DEFAULT
+        const store = JSON.parse(localStorage.getItem(storeName));
+        if (!store) {
+            updateStore(STORE_DEFAULT);
+            return STORE_DEFAULT;
+        }
+        return store;
     } catch (e) {
         return STORE_DEFAULT;
     }
