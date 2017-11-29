@@ -1,0 +1,7 @@
+dist
+.idea
+*.zip
+*.crx
+*.pem
+.DS_Store
+node_modules
