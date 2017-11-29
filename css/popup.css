@@ -5,6 +5,7 @@ body {
     height: 500px;
 }
 .container-popup {
+    margin: 20px;
     display: flex;
     justify-content: center;
     align-content: center;
